@@ -9,7 +9,7 @@
     <style>
         canvas {
             border: 1px solid #000;
-            margin-top: 20px;
+            width: 100%; /* Make the canvas responsive */
         }
     </style>
 </head>
@@ -38,7 +38,7 @@
         // Load the original image initially
         originalImage.src = "template.png";
         originalImage.onload = function() {
-            context.drawImage(originalImage, 0, 0);
+            context.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
         };
 
         function generateImage() {
@@ -48,7 +48,7 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
 
             // Draw the original image
-            context.drawImage(originalImage, 0, 0);
+            context.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
 
             // Set font properties
             context.font = "20px Arial";
