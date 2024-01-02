@@ -21,6 +21,13 @@
     <script>
         var canvas = document.getElementById("imageCanvas");
         var context = canvas.getContext("2d");
+        var originalImage = new Image();
+
+        // Load the original image initially
+        originalImage.src = "template.png";
+        originalImage.onload = function() {
+            context.drawImage(originalImage, 0, 0);
+        };
 
         function generateImage() {
             var userName = document.getElementById("userName").value;
@@ -28,25 +35,19 @@
             // Clear the canvas
             context.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Load the template image
-            var templateImage = new Image();
-            templateImage.src = "template.png";
+            // Draw the original image
+            context.drawImage(originalImage, 0, 0);
 
-            templateImage.onload = function() {
-                // Draw the template image
-                context.drawImage(templateImage, 0, 0);
+            // Set font properties
+            context.font = "20px Arial";
+            context.fillStyle = "black";
 
-                // Set font properties
-                context.font = "20px Arial";
-                context.fillStyle = "black";
+            // Text coordinates
+            var x = 50;
+            var y = 50;
 
-                // Text coordinates
-                var x = 50;
-                var y = 50;
-
-                // Add text to the image
-                context.fillText(userName, x, y);
-            };
+            // Add text to the image
+            context.fillText(userName, x, y);
         }
 
         function downloadImage() {
