@@ -26,7 +26,7 @@
 
             // Load the template image
             var templateImage = new Image();
-            templateImage.src = "template.jpg";
+            templateImage.src = "template.png";
 
             templateImage.onload = function() {
                 // Draw the template image
