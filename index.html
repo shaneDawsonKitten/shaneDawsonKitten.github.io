@@ -15,14 +15,18 @@
     <label for="userName">Enter Your Name:</label>
     <input type="text" id="userName" required>
     <button onclick="generateImage()">Generate Image</button>
-    <canvas id="imageCanvas"></canvas>
+    <button onclick="downloadImage()">Download Image</button>
+    <canvas id="imageCanvas" width="989" height="871"></canvas>
 
     <script>
+        var canvas = document.getElementById("imageCanvas");
+        var context = canvas.getContext("2d");
+
         function generateImage() {
             var userName = document.getElementById("userName").value;
 
-            var canvas = document.getElementById("imageCanvas");
-            var context = canvas.getContext("2d");
+            // Clear the canvas
+            context.clearRect(0, 0, canvas.width, canvas.height);
 
             // Load the template image
             var templateImage = new Image();
@@ -43,6 +47,17 @@
                 // Add text to the image
                 context.fillText(userName, x, y);
             };
+        }
+
+        function downloadImage() {
+            // Convert the canvas content to a data URL
+            var dataURL = canvas.toDataURL("image/png");
+
+            // Create a temporary link and trigger a download
+            var link = document.createElement("a");
+            link.href = dataURL;
+            link.download = "generated_image.png";
+            link.click();
         }
     </script>
 </body>
