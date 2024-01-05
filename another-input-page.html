@@ -12,7 +12,7 @@
     <form>
         <div class="mb-3">
             <label for="userName" class="form-label">Enter Your Name:</label>
-            <input type="text" class="form-control" id="userName" required>
+            <input type="text" class="form-control" id="userName" maxlength="50" required>
         </div>
         <button type="button" class="btn btn-primary" onclick="generateImage()">Generate Image</button>
         <button type="button" class="btn btn-success" onclick="downloadImage()">Download Image</button>
@@ -53,8 +53,29 @@
             var x = 710;
             var y = 430;
 
-            // Add text to the image
-            context.fillText(userName, x, y);
+            // Maximum characters per line
+            var maxCharsPerLine = 28;
+
+            // Break the text into lines
+            var lines = wordwrap(userName, maxCharsPerLine, "\n", false);
+
+            // Add each line to the image using TrueType font
+            var linesArray = lines.split("\n");
+            linesArray.forEach(function (line, index) {
+                context.fillText(line, x, y + index * 30); // Adjust the line spacing as needed
+            });
+        }
+
+        function wordwrap(str, width, brk, cut) {
+            brk = brk || '\n';
+            width = width || 75;
+            cut = cut || false;
+
+            if (!str) { return str; }
+
+            var regex = '.{1,' + width + '}(\\s|$)' + (cut ? '|.{' + width + '}|.+$' : '|\\S+?(\\s|$)');
+
+            return str.match(RegExp(regex, 'g')).join(brk);
         }
 
         function downloadImage() {
