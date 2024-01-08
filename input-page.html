@@ -80,17 +80,17 @@
             // Add each line to the image using TrueType font
             var linesArrayUserName = linesUserName.split("\n");
             linesArrayUserName.forEach(function (line, index) {
-                context.fillText(line, xUserName, yUserName + index * 30); // Adjust the line spacing as needed
+                context.fillText(line, xUserName, yUserName + index * 20); // Adjust the line spacing as needed
             });
 
             var linesArrayContactInfo = linesContactInfo.split("\n");
             linesArrayContactInfo.forEach(function (line, index) {
-                context.fillText(line, xContactInfo, yContactInfo + index * 30);
+                context.fillText(line, xContactInfo, yContactInfo + index * 20);
             });
 
             var linesArrayIdNumber = linesIdNumber.split("\n");
             linesArrayIdNumber.forEach(function (line, index) {
-                context.fillText(line, xIdNumber, yIdNumber + index * 30);
+                context.fillText(line, xIdNumber, yIdNumber + index * 20);
             });
         }
 
