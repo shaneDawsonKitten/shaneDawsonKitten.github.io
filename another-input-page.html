@@ -12,15 +12,15 @@
     <form>
         <div class="mb-3">
             <label for="userName" class="form-label">Enter Name:</label>
-            <input type="text" class="form-control" id="userName" maxlength="50" required>
+            <input type="text" class="form-control" id="userName" maxlength="100" required>
         </div>
         <div class="mb-3">
             <label for="contactInfo" class="form-label">Enter RSVP:</label>
-            <input type="text" class="form-control" id="contactInfo" maxlength="50" required>
+            <input type="text" class="form-control" id="contactInfo" maxlength="30" required>
         </div>
         <div class="mb-3">
             <label for="idNumber" class="form-label">Enter EXTENSION:</label>
-            <input type="text" class="form-control" id="idNumber" maxlength="20" required>
+            <input type="text" class="form-control" id="idNumber" maxlength="4" required>
         </div>
         <button type="button" class="btn btn-primary" onclick="generateImage()">Generate Image</button>
         <button type="button" class="btn btn-success" onclick="downloadImage()">Download Image</button>
@@ -39,7 +39,7 @@
         var originalImage = new Image();
 
         // Load the original image initially
-        originalImage.src = "23feb.png";
+        originalImage.src = "cnycorporate1v2@4x-100.jpg";
         originalImage.onload = function() {
             context.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
         };
@@ -60,14 +60,14 @@
             context.fillStyle = "black";
 
             // Text coordinates
-            var xUserName = 710;
-            var yUserName = 430;
+            var xUserName = 715;
+            var yUserName = 270;
 
-            var xContactInfo = 710;
-            var yContactInfo = 460;
+            var xContactInfo = 830;
+            var yContactInfo = 355;
 
-            var xIdNumber = 710;
-            var yIdNumber = 490;
+            var xIdNumber = 830;
+            var yIdNumber = 405;
 
             // Maximum characters per line
             var maxCharsPerLine = 28;
@@ -80,17 +80,17 @@
             // Add each line to the image using TrueType font
             var linesArrayUserName = linesUserName.split("\n");
             linesArrayUserName.forEach(function (line, index) {
-                context.fillText(line, xUserName, yUserName + index * 30); // Adjust the line spacing as needed
+                context.fillText(line, xUserName, yUserName + index * 20); // Adjust the line spacing as needed
             });
 
             var linesArrayContactInfo = linesContactInfo.split("\n");
             linesArrayContactInfo.forEach(function (line, index) {
-                context.fillText(line, xContactInfo, yContactInfo + index * 30);
+                context.fillText(line, xContactInfo, yContactInfo + index * 15);
             });
 
             var linesArrayIdNumber = linesIdNumber.split("\n");
             linesArrayIdNumber.forEach(function (line, index) {
-                context.fillText(line, xIdNumber, yIdNumber + index * 30);
+                context.fillText(line, xIdNumber, yIdNumber + index * 15);
             });
         }
 
