@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Image Website</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars initially */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="fullhome@4x-100.jpg" alt="Long Image">
+</body>
+</html>
