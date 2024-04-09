@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Image Website</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto; /* Enable scrolling */
+        }
+
+        img {
+            width: 100%;
+            min-height: 100vh; /* Set the minimum height to the viewport height */
+            display: block;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Set background color */
+            text-align: center;
+            padding: 10px;
+            z-index: 1; /* Ensure it's above the image */
+        }
+
+        .next-page-link,
+        .back-page-link {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333; /* Set link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a class="back-page-link" href="#" onclick="goBack()">Go Back</a>
+        <a class="next-page-link" href="InternshipJob.html">Next Page (ELP Program)</a>
+    </div>
+
+    <img src="<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Image Website</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto; /* Enable scrolling */
+        }
+
+        img {
+            width: 100%;
+            min-height: 100vh; /* Set the minimum height to the viewport height */
+            display: block;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Set background color */
+            text-align: center;
+            padding: 10px;
+            z-index: 1; /* Ensure it's above the image */
+        }
+
+        .next-page-link,
+        .back-page-link {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333; /* Set link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a class="back-page-link" href="#" onclick="goBack()">Go Back</a>
+    </div>
+
+    <img src="Intern Job@2x-100.jpg" alt="Long Image">
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>" alt="Long Image">
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>
